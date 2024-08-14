@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .flex{
+            display: flex;
+        }
+
+        .py-12{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .banner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: white;            
+        }
+
+        .banner {
+            background-color: #eeeeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        iframe {
+            border: 1px solid black;
+            width: 100%; /* takes precedence over the width set with the HTML width attribute */
+            overflow: hidden;
+            }
+
+
+        /* Banner specific sizes */
+        .banner-300x250 { width: 300px; height: 250px; }
+        .banner-300x600 { width: 300px; height: 600px; }
+        .banner-320x50  { width: 320px; height: 50px; }
+        .banner-728x90  { width: 728px; height: 90px; grid-column: span 2; }
+        .banner-970x90  { width: 970px; height: 90px; grid-column: span 2; }
+        .banner-970x250 { width: 970px; height: 250px; grid-column: span 2; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .banner-728x90, .banner-970x90, .banner-970x250 {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex py-12">
+        <div class="banner-grid">
+            <div class="banner banner-300x250">
+                <iframe width="300" height="250" scrolling="no" src="ads/300x250/index.html"></iframe>
+            </div>
+            <div class="banner banner-300x600">
+                <iframe width="300" height="600" scrolling="no" src="ads/300x600/index.html"></iframe>
+            </div>
+            <div class="banner banner-320x50">
+                <iframe width="320" height="50" scrolling="no" src="ads/320x50/index.html"></iframe>
+            </div>
+            <div class="banner banner-728x90">
+                <iframe width="728" height="90" scrolling="no" src="ads/728x90/index.html"></iframe>
+            </div>
+            <div class="banner banner-970x90">
+                <iframe width="970" height="90" scrolling="no" src="ads/970x90/index.html"></iframe>
+            </div>
+            <div class="banner banner-970x250">
+                <iframe width="970" height="250" scrolling="no" src="ads/970x250/index.html"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
